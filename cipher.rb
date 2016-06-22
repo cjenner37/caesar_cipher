@@ -1,27 +1,20 @@
-#alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u"]
-
-#puts alphabet.index("b")
+puts "Enter a message"
+a = gets.chomp
 
 def caesar_cipher(message, key)
 	alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u"]
-	ciphered_message = []
-	final = []
-	cipher = message.downcase.split(//)
-	cipher.map do |i|
-		ciphered_message << alphabet.index(i)
-			ciphered_message.map do |a|
-				final << a 
+	message.downcase.split(//).map do |i|
+		cipher = []
+			cipher << alphabet.index(i)
+			cipher.map! do |e| 
+				alphabet[e + key]
 			end
-	#	ciphered_message << alphabet.index(i + key)
+		print cipher.join.to_s
 	end
-	 #alphabet.index("cipher")
-	puts final
-
-
 end
 
-caesar_cipher("Hello", 5)
 
+caesar_cipher(a, 5)
 
 # var alphabet
 # define caesar_cipher(string, key)
