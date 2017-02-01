@@ -5,11 +5,12 @@ def caesar_cipher(message, key)
 	message.each_char do |i|
 		if letters.include?(i)
 			code += letters[letters.index(i) - key]
-		else 
-			code += i 
+		else
+			code += i
 		end
 	end
 	print code
+	puts ""
 end
 
-caesar_cipher("AaZz", 1)
+caesar_cipher("Basketball!", 1)
